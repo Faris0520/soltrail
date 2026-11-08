@@ -1,6 +1,6 @@
 # SolTrail
 
-SolTrail is a web app for someone new to Solana. It is a sequence of stages on Solana Devnet. A stage stays locked until the one before it is cleared, and the next quest stays locked until the current quest is cleared. Clearing a stage means the app read a result from the connected wallet or from Devnet. The score for that work is kept in this browser, under the wallet's public address. There is no account and no server of ours.
+SolTrail is a web app for someone new to Solana. It is a sequence of stages on Solana Devnet. A stage stays locked until the one before it is cleared, and the next quest stays locked until the current quest is cleared. Clearing a stage means the app read a result from the connected wallet or from Devnet. The score for that work is kept in this browser, under the wallet's public address. There is no account and no server of ours. 
 
 The line on the home page is the whole product: learn Solana by doing the steps.
 
