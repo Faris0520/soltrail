@@ -1,5 +1,9 @@
 # SolTrail
 
+https://soltrail-teal.vercel.app/
+
+<img width="1522" height="862" alt="image" src="https://github.com/user-attachments/assets/f4128a90-24ad-44e6-9edf-d963326c89ba" />
+
 SolTrail is a web app for someone new to Solana. It is a sequence of stages on Solana Devnet. A stage stays locked until the one before it is cleared, and the next quest stays locked until the current quest is cleared. Clearing a stage means the app read a result from the connected wallet or from Devnet. The score for that work is kept in this browser, under the wallet's public address. There is no account and no server of ours. 
 
 The line on the home page is the whole product: learn Solana by doing the steps.
