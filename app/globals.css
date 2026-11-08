@@ -1,0 +1,213 @@
+@import "tailwindcss";
+
+@theme {
+  --color-iris: #e6c15a;
+  --color-ink: #f4f4f5;
+  --color-deep: #c9a24a;
+  --color-slate: #a1a1aa;
+  --color-canvas: #070708;
+  --color-paper: #141416;
+  --color-lilac: #1c1c20;
+  --color-mist: #2e2e33;
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --shadow-bar: 0 4px 16px rgba(40, 46, 62, 0.1);
+  --shadow-press: 0 2px 4px rgba(40, 46, 62, 0.1);
+}
+
+@layer base {
+  html {
+    background: var(--color-canvas);
+    color: var(--color-ink);
+  }
+
+  body {
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+  }
+
+  a[href],
+  button,
+  summary {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  [aria-disabled="true"] {
+    cursor: not-allowed;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 3px;
+  }
+}
+
+@keyframes stage-beacon {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(230, 193, 74, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(230, 193, 74, 0);
+  }
+}
+
+@keyframes stage-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.stage-beacon {
+  animation: stage-beacon 1.8s ease-out infinite;
+}
+
+.hero-ground {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  background: linear-gradient(
+    180deg,
+    #2a231c 0%,
+    #211c17 30%,
+    #16130f 55%,
+    #0c0a09 78%,
+    #070708 100%
+  );
+}
+
+.hero-blobs {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  mask-image: linear-gradient(to bottom, #000 0%, #000 78%, transparent 100%);
+}
+
+.hero-blob {
+  position: absolute;
+  width: var(--s);
+  aspect-ratio: 1;
+  left: var(--x);
+  top: var(--y);
+  translate: -50% -50%;
+  border-radius: 50%;
+  filter: blur(18px);
+  background: radial-gradient(
+    closest-side,
+    rgb(var(--blob) / var(--a0)) 0%,
+    rgb(var(--blob) / var(--a1)) 26%,
+    rgb(var(--blob) / var(--a2)) 48%,
+    rgb(var(--blob) / var(--a3)) 74%,
+    transparent 100%
+  );
+  animation: hero-drift var(--dur) ease-in-out infinite alternate;
+  animation-delay: var(--delay, 0s);
+}
+
+.hero-blob-a {
+  --x: 0%;
+  --y: -8%;
+  --s: 100%;
+  --dur: 22s;
+  --blob: 122 78 36;
+  --a0: 0.36;
+  --a1: 0.2;
+  --a2: 0.08;
+  --a3: 0.03;
+}
+
+.hero-blob-b {
+  --x: 100%;
+  --y: 2%;
+  --s: 96%;
+  --dur: 26s;
+  --delay: -7s;
+  --blob: 138 98 48;
+  --a0: 0.28;
+  --a1: 0.15;
+  --a2: 0.06;
+  --a3: 0.02;
+}
+
+.hero-blob-c {
+  --x: 108%;
+  --y: 64%;
+  --s: 94%;
+  --dur: 28s;
+  --delay: -13s;
+  --blob: 230 193 90;
+  --a0: 0.62;
+  --a1: 0.32;
+  --a2: 0.12;
+  --a3: 0.04;
+}
+
+.hero-blob-d {
+  --x: 24%;
+  --y: 136%;
+  --s: 100%;
+  --dur: 24s;
+  --delay: -4s;
+  --blob: 92 48 18;
+  --a0: 0.88;
+  --a1: 0.42;
+  --a2: 0.14;
+  --a3: 0.04;
+}
+
+@keyframes hero-drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(3%, -2.5%, 0) scale(1.06);
+  }
+  100% {
+    transform: translate3d(-2.5%, 3%, 0) scale(0.96);
+  }
+}
+
+.hero-grain {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  opacity: 0.4;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
+}
+
+.gold-glow {
+  box-shadow: 0 0 48px rgba(230, 193, 74, 0.16);
+}
+
+.score-fill {
+  transition: width 240ms ease;
+}
+
+.stage-panel {
+  animation: stage-in 180ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stage-beacon,
+  .stage-panel,
+  .score-fill,
+  .hero-blob {
+    animation: none;
+    transition: none;
+  }
+}
