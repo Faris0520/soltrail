@@ -1,6 +1,6 @@
 # Product Requirements Document (PRD)
 
-# SolanaTrail
+# SolTrail
 
 **Tagline:** Learn Solana by Doing  
 **Versi:** 1.0  
@@ -13,7 +13,7 @@
 
 ## 1. Ringkasan Produk
 
-SolanaTrail adalah platform pembelajaran interaktif yang membantu pemula mengenal ekosistem Solana melalui misi praktik langsung (*learning quests*). Pengguna tidak hanya membaca dokumentasi, tetapi melakukan aktivitas sederhana menggunakan wallet dan Solana Devnet.
+SolTrail adalah platform pembelajaran interaktif yang membantu pemula mengenal ekosistem Solana melalui misi praktik langsung (*learning quests*). Pengguna tidak hanya membaca dokumentasi, tetapi melakukan aktivitas sederhana menggunakan wallet dan Solana Devnet.
 
 Setiap misi memiliki instruksi, tindakan yang harus dilakukan, dan kriteria penyelesaian. Sistem memeriksa data wallet atau transaksi melalui Solana RPC sebelum memberikan status selesai. Dengan pendekatan ini, progres belajar didasarkan pada aktivitas yang dapat diverifikasi, bukan sekadar tombol **Complete**.
 
@@ -28,7 +28,7 @@ Pemula yang ingin mempelajari Solana sering menghadapi beberapa kendala:
 
 ### 1.2 Solusi
 
-SolanaTrail menyediakan jalur belajar bertahap melalui lima misi. Pengguna menghubungkan Phantom Wallet, membaca informasi wallet, memperoleh SOL Devnet, mengirim pesan on-chain melalui Memo Program, lalu memverifikasi transaksi tersebut.
+SolTrail menyediakan jalur belajar bertahap melalui lima misi. Pengguna menghubungkan Phantom Wallet, membaca informasi wallet, memperoleh SOL Devnet, mengirim pesan on-chain melalui Memo Program, lalu memverifikasi transaksi tersebut.
 
 ### 1.3 Nilai Utama
 
@@ -109,7 +109,7 @@ Semua interaksi blockchain MVP hanya menggunakan **Solana Devnet**. Aplikasi har
 
 ## 5. Alur Pengguna
 
-1. Pengguna membuka halaman utama SolanaTrail.
+1. Pengguna membuka halaman utama SolTrail.
 2. Pengguna membaca penjelasan singkat dan menekan **Start Learning**.
 3. Pengguna menghubungkan Phantom Wallet.
 4. Aplikasi memastikan koneksi mengarah ke Solana Devnet.
@@ -198,7 +198,7 @@ Setiap misi memiliki judul, deskripsi, tujuan belajar, instruksi, status, dan XP
 
 1. Aplikasi membuat pesan Memo dengan format unik, misalnya:
 
-   `SOLANATRAIL|QUEST=HELLO_SOLANA|ID=<unique-id>`
+   `SOLTRAIL|QUEST=HELLO_SOLANA|ID=<unique-id>`
 
 2. Aplikasi membuat transaksi yang memuat instruksi Memo Program.
 3. Aplikasi menampilkan ringkasan transaksi dan jaringan Devnet.
@@ -313,7 +313,7 @@ Prioritas:
 
 Komponen:
 
-- Logo dan nama SolanaTrail.
+- Logo dan nama SolTrail.
 - Tagline: **Learn Solana by Doing**.
 - Penjelasan singkat manfaat produk.
 - Tombol **Start Learning**.
@@ -478,7 +478,7 @@ type UserProgress = {
 9. Misi yang sudah selesai tidak boleh kembali menjadi belum selesai hanya karena pengguna memuat ulang halaman.
 10. Jika pengguna berpindah wallet, aplikasi harus memuat progres yang sesuai dengan wallet tersebut.
 11. Jika pengguna berpindah jaringan, aplikasi harus meminta pengguna kembali ke Devnet sebelum menjalankan fitur MVP.
-12. SolanaTrail tidak menjamin bahwa suatu transaksi aman secara finansial. Aplikasi hanya memandu dan memverifikasi aktivitas belajar yang ditentukan.
+12. SolTrail tidak menjamin bahwa suatu transaksi aman secara finansial. Aplikasi hanya memandu dan memverifikasi aktivitas belajar yang ditentukan.
 
 ---
 
@@ -547,7 +547,7 @@ Status transaksi:
 
 MVP dinyatakan siap untuk demo apabila seluruh kriteria P0 berikut terpenuhi:
 
-- [ ] Landing page menampilkan tujuan SolanaTrail dan tombol mulai.
+- [ ] Landing page menampilkan tujuan SolTrail dan tombol mulai.
 - [ ] Pengguna dapat menghubungkan Phantom Wallet.
 - [ ] Aplikasi menampilkan alamat wallet dan indikator Devnet.
 - [ ] Aplikasi berhasil membaca saldo melalui RPC.
@@ -636,7 +636,7 @@ Urutan implementasi yang disarankan:
 
 Skenario demo yang disarankan untuk presentasi hackathon:
 
-1. Buka SolanaTrail dan jelaskan masalah pembelajaran Solana bagi pemula.
+1. Buka SolTrail dan jelaskan masalah pembelajaran Solana bagi pemula.
 2. Hubungkan Phantom Wallet yang berada di Devnet.
 3. Tunjukkan wallet address dan saldo yang dibaca langsung dari RPC.
 4. Buka misi Get Your First SOL dan tunjukkan proses memperoleh SOL Devnet.
@@ -648,7 +648,7 @@ Skenario demo yang disarankan untuk presentasi hackathon:
 10. Buka tautan Solana Explorer untuk membuktikan transaksi tercatat di Devnet.
 11. Tunjukkan quest yang selesai dan XP yang diperoleh.
 
-**Pesan utama demo:** SolanaTrail membantu pemula belajar Solana dengan melakukan aktivitas nyata dan membuktikan hasilnya melalui blockchain.
+**Pesan utama demo:** SolTrail membantu pemula belajar Solana dengan melakukan aktivitas nyata dan membuktikan hasilnya melalui blockchain.
 
 ---
 
@@ -669,7 +669,7 @@ Gunakan dokumentasi resmi berikut selama implementasi:
 
 | Aspek | Keputusan |
 |---|---|
-| Nama produk | SolanaTrail |
+| Nama produk | SolTrail |
 | Tagline | Learn Solana by Doing |
 | Target pengguna | Pemula Solana |
 | Target hackathon | Best Beginner Hack |
@@ -687,4 +687,4 @@ Gunakan dokumentasi resmi berikut selama implementasi:
 | Achievement | Badge lokal, bukan NFT |
 | Deployment | Vercel |
 
-**Definisi MVP:** SolanaTrail siap didemonstrasikan ketika seorang pengguna dapat menghubungkan wallet, membaca saldo Devnet, memperoleh SOL uji coba, mengirim Memo transaction, memverifikasi transaksi tersebut melalui RPC, dan mendapatkan progres belajar berdasarkan hasil verifikasi.
+**Definisi MVP:** SolTrail siap didemonstrasikan ketika seorang pengguna dapat menghubungkan wallet, membaca saldo Devnet, memperoleh SOL uji coba, mengirim Memo transaction, memverifikasi transaksi tersebut melalui RPC, dan mendapatkan progres belajar berdasarkan hasil verifikasi.
